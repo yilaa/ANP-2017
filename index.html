@@ -33,6 +33,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        font-size: 10px;
       }
     i {
     width: 18px;
@@ -322,20 +323,20 @@
           var tot2017 =1.5;
           };
       if (parseFloat(feature.getProperty('Total 2017'))>300000){
+          var color="#a72461";
+          var opacidad=0.80;
+          var circulo="#ffffff";
+          } else if (parseFloat(feature.getProperty('Total 2017'))>100000){
           var color="#cc4c02";
           var opacidad=0.80;
           var circulo="#cc4c02";
-          } else if (parseFloat(feature.getProperty('Total 2017'))>100000){
-          var color="#f2a13f";
-          var opacidad=0.90;
-          var circulo="#f2a13f";
           } else if (parseFloat(feature.getProperty('Total 2017'))>50000){
-          var color="#fadd98";
+          var color="#f2a13f ";
           var opacidad=1;
-          var circulo="#fadd98";
+          var circulo="#f2a13f ";
           } else {
           var color="#f00";
-          var opacidad=0.50;
+          var opacidad=0.5;
           var circulo="#f00";
           };
           return /** @type {google.maps.Data.StyleOptions} */({
@@ -361,7 +362,7 @@
       
       // Leyenda
       var legend = document.getElementById('legend');
-      legend.innerHTML = '<b>'+'<h1>Total Visitantes 2017:</h1>'+'</b><br>'+'<i style="background:#cc4c02; opacity: 0.8"></i>'+'Mayor a 300,000'+'</b><br></b><br>'+'<i style="background:#f2a13f; opacity: 0.9"></i>'+' Entre 100,00 a 200,00'+'</b><br></b><br>'+'<i style="background:#fadd98; opacity: 1"></i>'+' Entre 50,000 a 100,000'+'</b><br></b><br>'+'<i style="background:#f00; opacity: 0.5"></i>'+' Menor a 50,000';
+      legend.innerHTML = '<b>'+'<h1>Visitantes 2017:</h1>'+'</b><br>'+'<i style="background:#a72461; opacity: 0.8"></i>'+'<span style="font-size:15px;">Mayor a 300,000</span>'+'</b><br></b><br>'+'<i style="background:#cc4c02; opacity: 0.8"></i>'+'<span style="font-size:15px;">Entre 100,00 a 200,00</span'+'</b><br></b><br>'+'<i style="background:#f2a13f; opacity: 0.95"></i>'+'<span style="font-size:15px;">Entre 50,000 a 100,000</span>'+'</b><br></b><br>'+'<i style="background:#f00; opacity: 0.5"></i>'+'<span style="font-size:15px;">Menor a 50,000</span>';
       map.controls[google.maps.ControlPosition.LEFT_CENTER].push(legend);    
      
     }
